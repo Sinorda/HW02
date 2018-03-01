@@ -10,11 +10,12 @@
     </target>
 
     <target name="compile">
-        <mkdir dir="build/test/classes"/>
+        <mkdir dir="build/test"/>
         <mkdir dir="build/classes"/>
         <javac srcdir="src" destdir="build/classes" includeantruntime="false"/>
-        <javac srcdir="test" destdir="build/test/classes" includeantruntime="false">
+        <javac srcdir="test" destdir="build/test" includeantruntime="false">
             <classpath refid="classpath.test"/>
+            <pathelement location="build/test"/>
         </javac>
     </target>
 
