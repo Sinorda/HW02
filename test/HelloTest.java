@@ -1,7 +1,7 @@
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class TestMain {
+public class HelloTest {
 
 	@Test
   public void shouldFail() {

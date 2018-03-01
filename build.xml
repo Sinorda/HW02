@@ -9,13 +9,15 @@
         <delete dir="build"/>
     </target>
 
-    <target name="compile">
-        <mkdir dir="build/test"/>
+    <target name="compile" depends="clean">
         <mkdir dir="build/classes"/>
         <javac srcdir="src" destdir="build/classes" includeantruntime="false"/>
+    </target>
+
+    <target name="compile-test" depends="clean">
+        <mkdir dir="build/test"/>
         <javac srcdir="test" destdir="build/test" includeantruntime="false">
             <classpath refid="classpath.test"/>
-            <pathelement location="build/test"/>
         </javac>
     </target>
 
@@ -23,13 +25,16 @@
         <java classpath="build/classes" classname="Hello"/>
     </target>
 
-    <target name="test" depends="compile">
+    <target name="test" depends="compile, compile-test">
         <junit printsummary="on" haltonfailure="yes" fork="true">
             <classpath>
               <path refid="classpath.test"/>
               <pathelement location="build/test"/>
             </classpath>
-            <formatter type="brief" usefile="false" />
+            <formatter type="brief" usefile="false"/>
+            <batchtest>
+                <fileset dir="test" includes="**/*Test.java" />
+            </batchtest>
         </junit>
     </target>
 
