@@ -29,7 +29,7 @@
             </classpath>
             <formatter type="brief" usefile="false" />
             <batchtest>
-                <fileset dir="test" includes="**/*TestMain.java" />
+                <fileset dir="test" includes="**/*Hello.java" />
             </batchtest>
         </junit>
     </target>
