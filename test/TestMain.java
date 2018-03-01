@@ -8,4 +8,9 @@ public class TestMain {
   	assertTrue(true);
   }
 
+  @Test
+  public void shouldFail() {
+  	assertEquals(6, 10);
+  }
+
 }
