@@ -1,11 +1,11 @@
-package test;
-
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class TestMain {
 	
-	public static void main(String[] args) {
-		assertTrue(1 == 1);
-	}
+	@Test
+  public void evaluatesExpression() {
+  	assertTrue(true)
+  }
 
 }
