@@ -5,12 +5,18 @@
     </target>
 
     <target name="compile">
+        <mkdir dir="build/test/classes"/>
         <mkdir dir="build/classes"/>
         <javac srcdir="src" destdir="build/classes"/>
+        <javac srcdir="test" destdir="build/test/classes" classpath="lib/*"/>
+    </target>
+
+    <target name="run">
+        <java classpath="build/classes" classname="Hello"/>
     </target>
 
     <target name="test">
-        <java classpath="build/classes" classname="Hello"/>
+        <java classpath="build/classes" classname="TestMain"/>
     </target>
 
 </project>
